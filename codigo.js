@@ -4,11 +4,12 @@ $(document).ready(function () {
     for (var i = 0; i < res.length; i++) {
         var $botones = $("<button type=\"button\" class=\"btn btn-default\">");
         $botones.text(res[i]);
-        $(".col-md-1").append($botones);
+        $("#primero").append($botones);
     }
     var frase = "El señor de los anillos";
+    frase = frase.toUpperCase();
     for (var i = 0; i < frase.length; i++) {
-        var $oculto = $("<ul><li>");
+        var $oculto = $("<p>");
         if (frase[i] == " ") {
             $oculto.text("*");
         } else {
@@ -25,20 +26,29 @@ $(document).ready(function () {
     for (var i = 0; i < pulsados.length; i++) {
         pulsados[i].addEventListener("click", function (event) {
             seleccionados = event.target.innerHTML;
-            console.log(listSelect);
+            console.log(seleccionados);
+            if (seleccionados == "I") {
+                alert("Seleccionas la letra i");
+            }
         });
     }
     /*
-            function comprobar(x) {
+funcion que comprueba si la letra que introducimos esta ne la frase y nos dice la posicion de dicha letra
+function comprobar(x) {
     var frase = "El tio de los sellos";
+    frase = frase.toUpperCase();
+    x = x.toUpperCase();
     for (i = 0; i < frase.length; i++) {
+       var contador = 0;
+        
         if (x == frase[i]) {
-            console.log("SI");
-        } else {
+            var encontrada = frase[i];
+            ++contador;
+            console.log("Posicion en Array", i);
+            //console.log(contador);
+            console.log(encontrada);
             
-            console.log("no");
-            break;
-        }
+        } 
     }
 }
             */
